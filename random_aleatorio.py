@@ -2,8 +2,10 @@
 import random
 
 def run():
+
+    maxim_random = int(input('Ingresa el número maximo a buscar: '))
     number_found = False
-    random_number = random.randint(0,20)
+    random_number = random.randint(0,maxim_random)
 
     while not number_found:
         number = int(input('Intenta un número: '))
