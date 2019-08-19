@@ -64,6 +64,13 @@ def run():
 
     contact_book = ContactBook()
 
+    with open('contacts.csv', 'r') as f:
+        reader = csv.reader(f)
+        for idx, row in enumerate(reader):
+            if idx == 0:
+                continue
+            contact_book.add(row[0], row[1], row[2])
+
     while True:
         command = str(input('''
             ¿Qué deseas hacer?
