@@ -26,6 +26,13 @@ def add_contact():
         flash('¡Se añadió el contacto!')
 
     return render_template('add_contact.html')
+
+
+@app.route(r'/contact/<uid>',methods=['GET'])
+def contact_details(uid):
+    contact = Contact.get_by_id(int(uid))
+
+    return render_template('contact.html',contact=contact)
 #@app.route('/')
 #def hello_world():
 #    return 'Hola mundo.'
